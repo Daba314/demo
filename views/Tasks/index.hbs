@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+{{#if user}}
+<a href="/Tasks/add">Add a new task</a>
+{{/if}}
+<table class="table table-stripped table-hover">
+    <thread>
+        <th>Task</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        {{#each tasks}}
+        <tr>
+            <td>{{this.task}}</td>
+            <td>{{usDate this.startDate}}</td>
+            <td>{{usDate this.endDate}}</td>
+            {{#if ../user}}
+            <td><a href="/tasks/edit/{{this._id}}" class="btn btn-default">Edit</a></td>  
+            <td><a href="/tasks/delete/{{this._id}}" class="btn btn-danger" onclick = "return confirm('Are you sure about this action?');">Delete</a></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </thread>
+</table>
+
+

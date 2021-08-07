@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--Cybor bootsrao theme-->
+<link rel = 'stylesheet' href = '/stylesheets/bootstrap.min.css'>
+  </head>
+  <body>
+<header>
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Tasks/index">Tasks</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/Participants/justSee">Participants</a>
+    </li>
+  </ul>
+  <ul class = " navbar-nav ms-auto">
+    {{#if user}}
+    <!-- If the user is authenticated-->
+    <li class="nav-item">
+      <a class = "nav-link" href="#">{{user.username}}</a>
+    </li>
+    <li class="nav-item">
+      <a class = "nav-link" href="/logout">Logout</a>
+    </li>
+    {{else}}
+    <!--In the case if user is anonyms-->
+
+    <li class="nav-item">
+      <a class="nav-link" href="/register">Register</a>
+    </li>
+       <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+    </li>
+    {{/if}}
+  </ul>
+</nav>
+</header>
+
+    {{{body}}}
+  </body>
+  <footer>
+      <div class="footer">
+        <p>Daba Dashiev, 2021</p>
+    </div>
+  </footer>
+</html>
