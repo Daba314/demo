@@ -1,0 +1,32 @@
+{{#if messages}}
+    <div class="alert alert-danger">
+        Invalid Login
+    </div>
+{{else}}
+    <div class="alert alert-info">
+        Please enter your Credentials
+    </div>
+{{/if}}
+<h1>Login</h1>
+<form method="POST">
+    <fieldset>
+        <label for = "username" class="col-2 control-label">Username:</label>
+        <input name="username" id="username" required />
+    </fieldset>
+
+     <fieldset>
+        <label for = "password" class="col-2 control-label">Password:</label>
+        <input name="password" id="password" type = "password" required />
+    </fieldset>
+    
+    <div>
+    <button style = "margin: 10px"class="offset-3 btn btn-primary">Login</button>
+    <a class="btn btn-info" style = "margin: 10px" href="/github">Login with GitHub</a>
+    <a class="btn btn-info" style = "margin: 10px" href="/google">Login with Google</a><br>
+    </div>
+
+    <a href="/register" title="Don't have an account? Register">Register</a>
+    
+  
+   
+</form>
